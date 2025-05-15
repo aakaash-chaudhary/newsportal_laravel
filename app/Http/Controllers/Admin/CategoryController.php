@@ -1,18 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class Controller extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('admin.category.index',compact('categories'));
     }
 
     /**
@@ -20,7 +23,7 @@ class Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -28,7 +31,22 @@ class Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //   $request->validate([
+        //     'name'=> "required|string",
+        //     'email'=> "required|email",
+        //     'phone'=> "required",
+        //     'logo'=> "required|image",
+        // ]);
+
+
+        $category = new Category();
+        $category->title = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->meta_keywords = $request->meta_keywords;
+        $category->meta_description = $request->meta_description;
+        $category->save();
+        return redirect()->route('admin.category.index');
+
     }
 
     /**

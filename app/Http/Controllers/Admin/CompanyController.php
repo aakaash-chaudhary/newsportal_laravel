@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admimn;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Company;
@@ -15,11 +15,11 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = Company::first();
-        if(!$company){
+        $companies = Company::all();
+        if(!$companies){
             return redirect()->route('admin.company.create');
         }
-        return view('admin.company.index', compact('company'));
+        return view('admin.company.index', compact('companies'));
     }
 
     /**

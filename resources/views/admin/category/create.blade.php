@@ -6,53 +6,36 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
-                                <h4>Company Create</h4>
-                                <a href="{{ route('admin.company.index') }}" class="btn btn-primary">Go back</a>
+                                <h4>Category Create</h4>
+                                <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Go back</a>
                             </div>
                             <div class="card-body">
-                                <form action="{{route('admin.company.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('admin.category.store') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
 
-                                  <div class="row">
-                                      <div class="col-6 pb-2">
-                                        <label for="name">Enter Company Name</label>
-                                        <input type="text" name="name" id="name" class="form-control">
-                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 pb-2">
+                                            <label for="name">Enter Category Name</label>
+                                            <input type="text" name="name" id="name" class="form-control">
+                                        </div>
 
-                                    <div class="col-6 pb-2">
-                                        <label for="email">Enter Company Email</label>
-                                        <input type="text" name="email" id="email" class="form-control">
-                                    </div>
+                                        <div class="col-12 pb-2">
+                                            <label for="meta_keywords">Enter Meta Keywords</label>
+                                            <textarea name="meta_keywords" id="meta_keywords" class="form-control">
+                                        </textarea>
+                                        </div>
 
-                                    <div class="col-6 pb-2">
-                                        <label for="phone">Enter Company Phone Number</label>
-                                        <input type="text" phone="phone" id="phone" class="form-control">
-                                    </div>
+                                        <div class="col-12 pb-2">
+                                            <label for="description">Enter Meta Description</label>
+                                            <textarea name="description" id="description" class="form-control">
+                                        </textarea>
+                                        </div>
 
-                                    <div class="col-6 pb-2">
-                                        <label for="youtube">Enter Youtube Link</label>
-                                        <input type="text" youtube="youtube" id="youtube" class="form-control">
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-danger">Save Record</button>
+                                        </div>
                                     </div>
-
-                                    <div class="col-6 pb-2">
-                                        <label for="facebook">Enter Facebook Link</label>
-                                        <input type="text" facebook="facebook" id="facebook" class="form-control">
-                                    </div>
-
-                                    <div class="col-6 pb-2">
-                                        <label for="instagram">Enter Instagram</label>
-                                        <input type="text" instagram="instagram" id="instagram" class="form-control">
-                                    </div>
-
-                                    <div class="col-6 pb-2">
-                                        <label for="logo">Upload Company Logo</label>
-                                        <input type="file" logo="logo" id="logo" class="form-control">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-danger">Save Record</button>
-                                    </div>
-                                  </div>
                                 </form>
                             </div>
                         </div>

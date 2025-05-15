@@ -24,10 +24,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if ($company)
+                                        @foreach ($companies as $index=>$company)
                                             <tr>
                                                 <td>
-                                                    1
+                                                    {{++$index}}
                                                 </td>
                                                 <td>
                                                     {{ $company->name }}
@@ -40,7 +40,7 @@
                                                     {{ $company->email }}
                                                 </td>
                                                 <td>
-                                                    {{ $company->Phone }}
+                                                    {{ $company->phone }}
                                                 </td>
                                                 <td>
                                                     <form action="{{ route('admin.company.destroy', $company->id) }}"
@@ -54,7 +54,7 @@
 
                                                 </td>
                                             </tr>
-                                        @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

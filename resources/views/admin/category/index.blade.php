@@ -5,8 +5,8 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4>Company Details</h4>
-                            <a href="{{ route('admin.company.create') }}" class="btn btn-primary">Add New</a>
+                            <h4>Categories</h4>
+                            <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add New</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -16,45 +16,40 @@
                                             <th class="text-center">
                                                 #
                                             </th>
-                                            <th>Company Name</th>
-                                            <th>Logo</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
+                                            <th>Title</th>
+                                            <th>Slug</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if ($company)
+                                        @foreach ($categories as $index=>$category)
                                             <tr>
                                                 <td>
-                                                    1
+                                                    {{++$index}}
                                                 </td>
                                                 <td>
-                                                    {{ $company->name }}
+                                                    {{ $category->title }}
                                                 </td>
                                                 <td>
-                                                    <img alt="image" src="{{ asset($company->logo) }}"
-                                                        width="35">
+                                                    {{ $category->slug }}
                                                 </td>
                                                 <td>
-                                                    {{ $company->email }}
+                                                    {{ $category->status }}
                                                 </td>
                                                 <td>
-                                                    {{ $company->Phone }}
-                                                </td>
-                                                <td>
-                                                    <form action="{{ route('admin.company.destroy', $company->id) }}"
+                                                    <form action="{{ route('admin.category.destroy', $category->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        <a href="{{ route('admin.company.edit', $company->id) }}"
+                                                        <a href="{{ route('admin.category.edit', $category->id) }}"
                                                             class="btn btn-primary btn-sm">Edit</a>
                                                         <button class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
 
                                                 </td>
                                             </tr>
-                                        @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
