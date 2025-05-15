@@ -26,27 +26,27 @@
 
                                     <div class="col-6 pb-2">
                                         <label for="phone">Enter Company Phone Number</label>
-                                        <input type="text" phone="phone" id="phone" class="form-control">
+                                        <input type="text" name="phone" id="phone" class="form-control">
                                     </div>
 
                                     <div class="col-6 pb-2">
                                         <label for="youtube">Enter Youtube Link</label>
-                                        <input type="text" youtube="youtube" id="youtube" class="form-control">
+                                        <input type="text" name="youtube" id="youtube" class="form-control">
                                     </div>
 
                                     <div class="col-6 pb-2">
                                         <label for="facebook">Enter Facebook Link</label>
-                                        <input type="text" facebook="facebook" id="facebook" class="form-control">
+                                        <input type="text" name="facebook" id="facebook" class="form-control">
                                     </div>
 
                                     <div class="col-6 pb-2">
                                         <label for="instagram">Enter Instagram</label>
-                                        <input type="text" instagram="instagram" id="instagram" class="form-control">
+                                        <input type="text" name="instagram" id="instagram" class="form-control">
                                     </div>
 
                                     <div class="col-6 pb-2">
                                         <label for="logo">Upload Company Logo</label>
-                                        <input type="file" logo="logo" id="logo" class="form-control">
+                                        <input type="file" name="logo" id="logo" class="form-control">
                                     </div>
 
                                     <div class="col-12">

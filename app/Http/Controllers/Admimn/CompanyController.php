@@ -55,7 +55,7 @@ class CompanyController extends Controller
         if($file){
             $filename = time() . "." . $file->getClientOriginalExtension();
             $file->move('image', $filename);
-            $company->logo = $image/$filename;
+            $company->logo = "image/$filename";
         }
         $company->save();
         return redirect()->route('admin.company.index');
@@ -74,7 +74,7 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
-        $company = Company::find(id);
+        $company = Company::find($id);
         return view('admin.company.edit',compact('company'));
     }
 
@@ -103,7 +103,7 @@ class CompanyController extends Controller
         if($file){
             $filename = time() . "." . $file->getClientOriginalExtension();
             $file->move('image', $filename);
-            $company->logo = $image/$filename;
+            $company->logo = "image/$filename";
         }
         $company->update();
         return redirect()->route('admin.company.index');
@@ -114,7 +114,7 @@ class CompanyController extends Controller
      */
     public function destroy(string $id)
     {
-        $company = Company::find(id);
+        $company = Company::find($id);
         $company->delete();
         return redirect()->route('admin.company.index');
     }

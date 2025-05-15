@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource("/admin/company",CompanyController::class)->names('admin.company');
+    Route::resource("/admin/category",CompanyController::class)->names('admin.company');
+    Route::resource("/admin/company",CompanyController::class)->names('admin.company');
 });
 
 require __DIR__.'/auth.php';
