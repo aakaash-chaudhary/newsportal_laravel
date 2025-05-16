@@ -6,7 +6,7 @@
     </div>
     <ul class="sidebar-menu">
         <li class="menu-header">Main</li>
-        <li class="dropdown {{Request::routeIs('dashboard') ? 'active' : ""}}">">
+        <li class="dropdown {{Request::routeIs('dashboard') ? 'active' : ""}}">
             <a href="{{route('dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
         </li>
 
@@ -19,8 +19,8 @@
             <a href="{{route('admin.category.index')}}" class="nav-link"><i data-feather="tag"></i><span>Category</span></a>
         </li>
 
-        <li class="dropdown">
-            <a href="index.html" class="nav-link"><i data-feather="book-open"></i><span>Article</span></a>
+        <li class="dropdown {{Request::routeIs('admin.article*') ? 'active' : ""}}">
+            <a href="{{route('admin.article.index')}}" class="nav-link"><i data-feather="book-open"></i><span>Article</span></a>
         </li>
 
         <li class="dropdown">
