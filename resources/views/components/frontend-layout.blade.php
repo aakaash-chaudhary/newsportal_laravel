@@ -9,14 +9,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-    <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/style.css') }}">
+    <link rel="stylesheet" href="{{asset('fontawesome-free-6.7.2-web/css/all.min.css')}}">
 </head>
 
 <body>
     <x-frontend-header />
     <main>
-        {{$slot}}
+        {{ $slot }}
     </main>
+
     <x-frontend-footer />
 </body>
 
